@@ -29,6 +29,39 @@ const PFSignUpForm = () => {
             >
                 <Input/>
             </Form.Item>
+            <Form.Item
+            label="password"
+            name="password"
+            rules={[{
+              required:true,
+              message: 'Select a password'
+            }]}
+            >
+              <Input type="password"/>
+            </Form.Item>
+            <Form.Item
+            label="enter password again"
+            name="password-2"
+            rules={[{
+              required:true,
+              message: 'please re-enter your chosen password'
+            }]}
+            >
+              <Input type="password"/>
+            </Form.Item>
+            <Form.Item
+            label="email"
+            name="email"
+            rules={[{
+              required: true,
+              message: 'Please enter your email address'
+            }]}
+            >
+              <Input type="email"/>
+            </Form.Item>
+            <Form.Item>
+              <Button type="submit" className='btn-green'>Submit</Button>
+            </Form.Item>
         </Form>
     )
 }

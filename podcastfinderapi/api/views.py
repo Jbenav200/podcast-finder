@@ -7,6 +7,7 @@ import requests
 import json
 from dotenv import load_dotenv
 from .utils import get_spotify_token, search_for_podcast
+from django.contrib.auth import authenticate, login
 
 load_dotenv()
 
@@ -54,3 +55,16 @@ def get_podcasts(request):
     return Response({'message': additional_info, 'appleResults': apple_results, 'spotifyResults': spotify_results})
 
 
+@api_view(['POST'])
+def login(request):
+    data = request.data
+    username = data.username
+    password = data.password
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return Response({'message': 'logged in'})
+    else:
+        return Response({'error': 'User does not exist'})
+
+    
