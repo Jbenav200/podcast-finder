@@ -7,7 +7,12 @@ import requests
 import json
 from dotenv import load_dotenv
 from .utils import get_spotify_token, search_for_podcast
-from django.contrib.auth import authenticate, login
+from .serializers import UserSerializer
+from rest_framework import status
+from rest_framework.authtoken.models import Token
+from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
+
 
 load_dotenv()
 
@@ -54,17 +59,26 @@ def get_podcasts(request):
 
     return Response({'message': additional_info, 'appleResults': apple_results, 'spotifyResults': spotify_results})
 
-
 @api_view(['POST'])
 def login(request):
-    data = request.data
-    username = data.username
-    password = data.password
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        login(request, user)
-        return Response({'message': 'logged in'})
-    else:
-        return Response({'error': 'User does not exist'})
+    user = get_object_or_404(User, username=request.data['username'])
+    if not user.check_password(raw_password=request.data['password']):
+        return Response({"detail": "not found"}, status=status.HTTP_404_NOT_FOUND)
+    
+    token, created = Token.objects.get_or_create(user=user)
+    serializer = UserSerializer(instance=user)
+    return Response({"token": token.key, "user": serializer.data })
+
+@api_view(['POST'])
+def signup(request):
+    serializer = UserSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        user = User.objects.get(username=request.data['username'])
+        user.set_password(request.data['password'])
+        user.save()
+        token = Token.objects.create(user=user)
+        return Response({'token': token.key, 'user': serializer.data})
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     

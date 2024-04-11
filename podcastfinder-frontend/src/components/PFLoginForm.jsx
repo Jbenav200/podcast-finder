@@ -35,8 +35,6 @@ const PFSignUpForm = () => {
           initialValues={{
             remember: true,
           }}
-
-          onSubmitCapture={sendRequest}
         >
             <Form.Item
             label="username"
@@ -48,7 +46,7 @@ const PFSignUpForm = () => {
                 }
             ]}
             >
-                <Input onChange={e = setUsername(e.target.value) }/>
+                <Input onChange={e => setUsername(e.target.value) }/>
             </Form.Item>
             <Form.Item
             label="password"
