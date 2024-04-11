@@ -10,15 +10,3 @@ bin
 *.pyc
 db.sqlite3
 **/db.sqlite3
-podcastfinder-frontend/src/App.jsx
-podcastfinder-frontend/src/index.css
-podcastfinder-frontend/src/components/Footer.jsx
-podcastfinder-frontend/src/components/PFLoginForm.jsx
-podcastfinder-frontend/src/components/PFSignUpForm.jsx
-podcastfinder-frontend/src/pages/about.jsx
-podcastfinder-frontend/src/pages/blogs.jsx
-podcastfinder-frontend/src/pages/contact.jsx
-podcastfinder-frontend/src/pages/index.jsx
-podcastfinder-frontend/src/pages/results.jsx
-podcastfinder-frontend/src/pages/search.jsx
-podcastfinder-frontend/src/pages/signup.jsx
