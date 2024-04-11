@@ -7,10 +7,10 @@ const Contact = () => {
     return (
         <>
             <div className="secondary-header">
-                    <div className="columns-2 mb-10 heading flex justify-center">
-                        <h1 className="font-bold">Contact Us PodcastFinder</h1>
-                        <FaHeadphones/>
-                    </div>
+                <div className="columns-1 mb-10 heading flex justify-center">
+                    <h1 className="font-bold pr-2.5">Contact us at PodcastFinder</h1>
+                    <FaHeadphones color="#242424" fontSize="3rem"/>
+                </div>
             </div>
             <div className="content container mx-10">
                 <div className="row">

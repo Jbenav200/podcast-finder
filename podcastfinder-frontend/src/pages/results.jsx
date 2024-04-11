@@ -29,7 +29,7 @@ const Results = () => {
     }
 
     return(
-        <div className="results-container">
+        <div className="container">
             <div className="apple-data-container">
                 <h1>Apple Podcasts results:</h1>
                 <Carousel style={carouselStyle} autoplay={true} autoplaySpeed={3000} infinite={true}>

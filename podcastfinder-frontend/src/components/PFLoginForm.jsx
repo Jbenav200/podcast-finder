@@ -59,7 +59,7 @@ const PFSignUpForm = () => {
               <Input type="password" onChange={e => setPassword(e.target.value)}/>
             </Form.Item>
             <Form.Item>
-              <Button type="submit" className='btn-green' onClick={handleSubmit}>Log in</Button>
+              <Button type="submit" className='btn-grey' onClick={handleSubmit}>Log in</Button>
             </Form.Item>
         </Form>
     )

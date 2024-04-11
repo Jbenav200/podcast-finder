@@ -60,7 +60,7 @@ const PFSignUpForm = () => {
               <Input type="email"/>
             </Form.Item>
             <Form.Item>
-              <Button type="submit" className='btn-green'>Submit</Button>
+              <Button type="submit" className='btn-grey'>Submit</Button>
             </Form.Item>
         </Form>
     )

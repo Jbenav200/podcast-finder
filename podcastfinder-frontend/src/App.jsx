@@ -8,9 +8,10 @@ import {
 import Home from "./pages/index.jsx";
 import About from "./pages/about.jsx";
 import Blogs from "./pages/blogs.jsx";
-import Signup from "./pages/signup.jsx";
+import Search from "./pages/search.jsx";
 import Contact from "./pages/contact.jsx";
 import Results from "./pages/results.jsx";
+import Footer from './components/Footer.jsx';
 import './App.css'
 
 
@@ -23,9 +24,10 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />}/>
               <Route path="/blogs" element={<Blogs />} />
-              <Route path="/search" element={<Signup />}/>
+              <Route path="/search" element={<Search />}/>
               <Route path="/results" element={<Results />}/>
-            </Routes>
+          </Routes>
+          <Footer/>
       </Router>
   )
 }

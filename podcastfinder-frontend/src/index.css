@@ -96,6 +96,55 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.btn-grey{
+  background-color: #242424;
+  color:#fff;
+  border-color: transparent!important;
+}
+
+.btn-grey:hover{
+  background-color: #fff!important;
+  color: #242424!important;
+  border-color: transparent!important;
+}
+
+.btn-purple{
+  background-color: #646cff;
+  color: #fff!important;
+}
+
+.btn-purple:hover{
+  background-color: #242424!important;
+  color:#fff!important;
+}
+
+.btn-pink{
+  background-color: #fff;
+  color:#242424;
+}
+
+.btn-pink:hover{
+  background-color: #242424!important;
+  color: #fff!important;
+  border-color: transparent!important;
+}
+
+.sub-heading{
+  font-size:5rem
+}
+
+.footer{
+  bottom:0;
+  right:0;
+  width:100vw;
+  background-color: #c95f96;
+  height:120px;
+}
+
+.contents{
+  height:100%;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

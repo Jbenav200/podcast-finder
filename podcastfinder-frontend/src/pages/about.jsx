@@ -7,9 +7,9 @@ const About = () => {
     return (
         <>
             <div className="secondary-header">
-                <div className="columns-2 mb-10 heading flex justify-center">
-                    <h1 className="font-bold">About PodcastFinder</h1>
-                    <FaHeadphones/>
+            <div className="columns-1 mb-10 heading flex justify-center">
+                    <h1 className="font-bold pr-2.5">About PodcastFinder</h1>
+                    <FaHeadphones color="#242424" fontSize="3rem"/>
                 </div>
             </div>
             <div className="content container xs:mx-10">
