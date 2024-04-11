@@ -46,11 +46,23 @@ const Results = () => {
             </div>
             <div className="spotify-data-container">
                 <h1>Spotify Podcast Results</h1>
-                <Space direction="vertical" size={16}>
-                    {spotifyItems.map((item) => {
-                        <p>{item.name}</p>
-                    })}
-                </Space>
+                <Carousel style={carouselStyle} autoplay={true} autoplaySpeed={3000} infinite={true}>
+                    {
+                        spotifyItems.map((item) =>(
+                            <div style={contentStyle}>
+                                <h3 style={{color:'#fff'}}>{item.name}</h3>
+                                <img src={item.images[0].url} style={{margin: "auto", height:"300px"}}/>
+                                <p style={{color:'#fff'}}>Produced by: {item.publisher}</p>
+                                <b><p style={{color:'#fff',}}>View Podcast episodes <a href={item.external_urls.spotify} target="about_blank" style={{color:'lightpink'}}>here</a></p></b>
+                            </div>
+                        ))
+                    }
+                </Carousel>
+                {/*<Space direction="vertical" size={16}>*/}
+                {/*    {spotifyItems.map((item) => {*/}
+                {/*        <p>{item.name}</p>*/}
+                {/*    })}*/}
+                {/*</Space>*/}
             </div>
         </div>
     )

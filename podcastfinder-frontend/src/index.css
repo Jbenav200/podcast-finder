@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -13,20 +17,58 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root{
+  padding:0;
+  margin:0;
+  min-width: 100vw;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #242424;
 }
 
 body {
   margin: 0;
   display: flex;
+
+}
+
+Nav{
+  width:100vw;
+  margin-left:0;
+}
+
+.header{
+  background-color: #c95f96;
+  height:80vh;
+  position:relative;
+}
+
+.secondary-header{
+  background-color: #c95f96;
+  height:40vh;
+  position:relative;
+}
+
+.heading{
+  padding-top:15vh;
+}
+
+.header-svg{
+  position: absolute;
+  bottom:0;
+  right:0;
+}
+
+.content{
+  margin-top:50px;
   place-items: center;
-  min-width: 320px;
+  width: 100vw;
   min-height: 100vh;
 }
 
@@ -64,5 +106,26 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+.btn-green{
+  @apply bg-green-500
+}
+
+.btn-green:hover{
+  @apply bg-green-700
+}
+
+@media screen and(max-width:800px) {
+  #header{
+    height:auto;
+    position:relative;
+  }
+
+  .header-svg{
+    position:absolute;
+    bottom:0;
+    right:0;
   }
 }

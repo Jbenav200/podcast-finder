@@ -15,8 +15,6 @@ import './App.css'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
       <Router>
           <Navbar />
@@ -25,7 +23,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />}/>
               <Route path="/blogs" element={<Blogs />} />
-              <Route path="/sign-up" element={<Signup />}/>
+              <Route path="/search" element={<Signup />}/>
               <Route path="/results" element={<Results />}/>
             </Routes>
       </Router>
