@@ -1,12 +1,14 @@
 import { Form, Button, Input, Checkbox } from 'antd';
 import react, {useState} from 'react';
 import axios from "axios";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
-const PFSignUpForm = () => {
+const PFSignUpForm = (props, {setUserToken}) => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [userToken, setUserTokenLogin] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
     axios.post('http://localhost:8000/api/login', {
@@ -14,8 +16,11 @@ const PFSignUpForm = () => {
       'password': password
     })
     .then(response => {
-      let newPath = '/sign-up';
-      useNavigate(newPath, {state: {signedIn: true}})
+      setUserTokenLogin(response.data.token);
+      props.setUserToken(response.data.token);
+      localStorage.setItem('token', JSON.stringify(response.data.token));
+      let newPath = '/search';
+      navigate(newPath, {state: {signedIn: true}});
     }).catch(error => {
       console.log(error);
     });
