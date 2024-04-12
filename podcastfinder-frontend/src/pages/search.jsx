@@ -8,7 +8,6 @@ import { FaHeadphones } from "react-icons/fa";
 const Search = () => {
     const location = useLocation();
     const token = localStorage.getItem('token');
-    console.log(token);
     let signedIn = false;
     if (token !== null){
         signedIn = true;
